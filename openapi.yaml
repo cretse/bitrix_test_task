@@ -1,0 +1,35 @@
+openapi: 3.0.0
+info:
+  title: Catalog API
+  version: 1.0.0
+paths:
+  /api/v1/categories:
+    get:
+      summary: Получить список категорий
+      responses:
+        '200':
+          description: OK
+  /api/v1/products/{categoryId}:
+    get:
+      summary: Получить товары в категории
+      parameters:
+        - name: categoryId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+  /api/v1/product/{productId}:
+    get:
+      summary: Детальная информация о товаре
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
